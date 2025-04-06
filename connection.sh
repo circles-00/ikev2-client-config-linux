@@ -1,4 +1,4 @@
-!#/bin/env bash
+#!/bin/env bash
 
 DEFAULT_MTU=1350
 
@@ -18,13 +18,13 @@ if [ "$status" == "up" ]; then
   fi
 
     echo "Starting connection..."
-    ipsec up some-vpn
+    sudo ipsec up some-vpn
     echo "Setting MTU to $mtu for $default_nic"
     sudo ip link set dev $default_nic mtu $mtu
     echo "Connection started."
 elif [ "$status" == "down" ]; then
     echo "Stopping connection..."
-    ipsec down some-vpn
+    sudo ipsec down some-vpn
     echo "Setting MTU to 1500 for $default_nic"
     sudo ip link set dev $default_nic mtu 1500
     echo "Connection stopped."

@@ -1,4 +1,4 @@
-!#/bin/env bash
+#!/bin/env bash
 
 echo "Configuring IPsec and StrongSwan..."
 sudo cp -t /etc/ ipsec.conf ipsec.secrets
